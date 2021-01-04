@@ -13,6 +13,7 @@ module.exports = {
   },
   module: {
     rules: [
+      //handle ts files
       {
         test: /\.ts$/,
         use: [
@@ -40,13 +41,37 @@ module.exports = {
           }
         ],
         exclude: /node_modules/
-      }
+      },
+      // handle less files
+      {
+        test: /\.less$/,
+        use:[
+            "style-loader",
+            "css-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions:{
+                  plugins: [
+                      [
+                        "postcss-preset-env",
+                        {
+                          browsers: 'last 2 versions'
+                        }
+                      ]
+                  ]
+                }
+              }
+            },
+            "less-loader"
+        ]
+      },
     ]
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title:'TS test'
+      template: "./src/index.html"
     }),
   ],
   devtool: "inline-source-map",
