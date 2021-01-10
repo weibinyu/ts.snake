@@ -15,7 +15,7 @@ export default class Snake{
     set X(val ){
         if(this.X === val ) return
 
-        if(val < 0 && val > 290){
+        if(val < 0 || val > 290){
             throw new Error("Snake hit the wall")
         }
         if(this.snakeBody[1] && this.snakeBody[1].offsetLeft === val) {
@@ -34,7 +34,7 @@ export default class Snake{
     set Y(val ){
         if(this.Y === val ) return
 
-        if(val < 0 && val > 290){
+        if(val < 0 || val > 290){
             throw new Error("Snake hit the wall")
         }
         if(this.snakeBody[1] && this.snakeBody[1].offsetTop === val) {
