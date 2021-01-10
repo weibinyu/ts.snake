@@ -1,6 +1,6 @@
 export default class ScorePanel{
     private score = 0
-    private level = 1
+    level = 1
 
     private scoreElement = document.getElementById("score")!
     private levelElement = document.getElementById("level")!
@@ -25,4 +25,5 @@ export default class ScorePanel{
             this.levelElement.innerHTML = ++this.level + ''
         }
     }
+
 }

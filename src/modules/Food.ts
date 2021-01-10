@@ -3,9 +3,9 @@ export default class Food{
     stageWidth: number
     stageHeight: number
 
-    constructor(stageHeight: number,stageWidth: number) {
-        this.stageHeight = stageHeight
-        this.stageWidth = stageWidth
+    constructor() {
+        this.stageHeight = 300
+        this.stageWidth = 300
         this.element = document.getElementById("food")!
     }
 
@@ -18,10 +18,11 @@ export default class Food{
     }
 
     randomlyChangePosition(){
-        let x = Math.round(Math.random() * this.stageWidth) * 10
-        let y = Math.round(Math.random() * this.stageHeight) * 10
+        let x = Math.round((Math.random() * this.stageWidth) / 10) * 10
+        let y = Math.round((Math.random() * this.stageHeight) / 10) * 10
 
         this.element.style.left = x+'px'
         this.element.style.top = y+'px'
+
     }
 }
