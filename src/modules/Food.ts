@@ -4,8 +4,8 @@ export default class Food{
     stageHeight: number
 
     constructor() {
-        this.stageHeight = 300
-        this.stageWidth = 300
+        this.stageHeight = 290
+        this.stageWidth = 290
         this.element = document.getElementById("food")!
     }
 
