@@ -55,7 +55,7 @@ export default class GameControl{
             this.snake.X = X
             this.snake.Y = Y
         }catch (e){
-            alert(e.message)
+            alert(e.message + "Refresh the page to start a new game")
             this.isLive = false
         }
 
